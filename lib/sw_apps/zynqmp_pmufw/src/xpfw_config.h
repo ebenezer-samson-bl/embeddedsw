@@ -126,7 +126,7 @@ extern "C" {
 #endif
 
 #ifndef ENABLE_EM_VAL
-#define	ENABLE_EM_VAL						(0U)
+#define	ENABLE_EM_VAL						(1U)
 #endif
 
 #ifndef ENABLE_SCHEDULER_VAL

@@ -1419,6 +1419,18 @@ done:
 	IPI_RESPONSE1(master->ipiMask, (u32)status);
 }
 
+void PmCustomSystemShutdown(void)
+{
+	PmSystemShutdown(&pmMasterRpu_g, PMF_SHUTDOWN_TYPE_SHUTDOWN, 0);
+	PmNode* nodePtr;
+	nodePtr = PmGetNodeById(NODE_FPD);
+	PmNodeForceDown(nodePtr);
+	nodePtr = PmGetNodeById(NODE_LPD);
+	PmNodeForceDown(nodePtr);
+	nodePtr = PmGetNodeById(NODE_PL);
+	PmNodeForceDown(nodePtr);
+}
+
 /**
  * PmSetMaxLatency() - set maximum allowed latency for the node
  * @master  Initiator of the request who must previously requested the node

@@ -33,6 +33,7 @@ void ModEmInit(void);
 void RpuLsHandler(u8 ErrorId);
 void SwdtHandler(u8 ErrorId);
 void NullHandler(u8 ErrorId);
+void TempHandler(u8 ErrorId);
 
 #ifdef __cplusplus
 }

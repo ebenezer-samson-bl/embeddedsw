@@ -30,6 +30,7 @@ void PmProcessRequest(PmMaster *const master, const u32 *pload);
 void PmResetAssert(const PmMaster *const master, const u32 reset,
 		   const u32 action);
 void PmShutdownInterruptHandler(void);
+void PmCustomSystemShutdown(void);
 void PmKillBoardPower(void);
 void PmExtReset(void);
 

@@ -132,6 +132,15 @@ void SwdtHandler(u8 ErrorId)
 	XPfw_RecoveryHandler(ErrorId);
 }
 
+#include "pm_core.h"
+void TempHandler(u8 ErrorId)
+{
+	//EM_ERR_ID_FPD_TEMP, EM_ERR_ID_LPD_TEMP;
+	XPfw_Printf(DEBUG_ERROR,"EM: Over Temperature Error (Error ID: %d)\r\n",
+			ErrorId);
+	PmCustomSystemShutdown();
+}
+
 /* CfgInit Handler */
 static void EmCfgInit(const XPfw_Module_t *ModPtr, const u32 *CfgData,
 		u32 Len)

@@ -60,7 +60,7 @@ static void CheckFsblCompletion(void)
 			}
 
 			if (XST_SUCCESS != XPfw_EmSetAction(EM_ERR_ID_LPD_SWDT,
-					EM_ACTION_SRST, ErrorTable[EM_ERR_ID_LPD_SWDT].Handler)) {
+					EM_ACTION_POR, ErrorTable[EM_ERR_ID_LPD_SWDT].Handler)) {
 				XPfw_Printf(DEBUG_DETAILED,"Common: Set error action for "
 						"LPD WDT error failed\r\n");
 			}
@@ -73,7 +73,7 @@ static void CheckFsblCompletion(void)
 			}
 
 			if (XST_SUCCESS != XPfw_EmSetAction(EM_ERR_ID_LPD_SWDT,
-					SWDT_EM_ACTION, ErrorTable[EM_ERR_ID_LPD_SWDT].Handler)) {
+					EM_ACTION_POR, ErrorTable[EM_ERR_ID_LPD_SWDT].Handler)) {
 				XPfw_Printf(DEBUG_DETAILED,"Common: Set error action for "
 						"LPD WDT error failed\r\n");
 			}
